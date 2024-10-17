@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI: string | undefined = process.env.MONGODB_URI;
+const MDB_URI: string | undefined = process.env.MDB_URI;
 
-if (!MONGODB_URI) {
+if (!MDB_URI) {
   throw new Error(
-    "Please define the MONGODB_URI environment variable inside .env.local"
+    "Missing MDB_URI in .env"
   );
 }
 
@@ -14,7 +14,6 @@ interface MongooseCache {
 }
 
 declare global {
-  // eslint-disable-next-line no-var
   var mongoose: MongooseCache;
 }
 
@@ -34,7 +33,7 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
+    cached.promise = mongoose.connect(MDB_URI!, opts).then((mongoose) => {
       return mongoose;
     });
   }
