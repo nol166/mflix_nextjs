@@ -6,10 +6,9 @@ import Movie from '../../../../models/Movie';
 export async function GET(req: Request, { params }: { params: { id: string } }) {
     await dbConnect();
 
-    console.log('Database connection status:', dbConnect);
-
     const { id } = params;
     const movie = await Movie.findById(id);
+    console.log(movie)
 
     if (!movie) {
         return NextResponse.json({ message: 'Movie not found' }, { status: 404 });

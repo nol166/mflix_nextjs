@@ -6,10 +6,12 @@ import axios from "axios";
 import Image from "next/image";
 
 interface Movie {
-  id: string;
-  name: string;
-  image: string;
-  genres: { genre: { name: string } }[];
+  _id: string;
+  title: string;
+  poster: string;
+  year: number;
+  plot: string;
+  genres: string[];
 }
 
 const MovieDetailsPage = () => {
@@ -33,22 +35,25 @@ const MovieDetailsPage = () => {
 
   return (
     <div className="movie-details-container">
-      <h1>{movie.name}</h1>
+      <h1>{movie.title}</h1>
       <Image
-        src={movie.image}
-        alt={movie.name}
-        width={500}
-        height={300}
+        src={movie.poster}
+        alt={movie.title}
+        width={300}
+        height={450}
         className="movie-image"
       />
       <h2>Genres</h2>
       <ul className="genres-list">
         {movie.genres.map((genre, index) => (
           <li key={index} className="genre-item">
-            {genre.genre.name}
+            {genre}
           </li>
         ))}
       </ul>
+      <h4>{movie.year}</h4>
+      <p>{movie.plot}</p>
+      <button onClick={() => router.push("/movies")}>Back</button>
     </div>
   );
 };

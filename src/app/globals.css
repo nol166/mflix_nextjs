@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: black;
 }
 
 .login-box {
@@ -18,6 +19,14 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
+}
+
+#email {
+  width: 92%
+}
+
+#password {
+  width: 92%
 }
 
 h2 {
