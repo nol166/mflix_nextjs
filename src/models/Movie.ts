@@ -1,21 +1,20 @@
-import mongoose, { Schema, Document, model } from "mongoose";
+// src/models/Movie.ts
+import mongoose, { Schema, Document } from 'mongoose';
 
 interface IMovie extends Document {
-  title: string;
+  name: string;
   poster: string;
   year: number;
   plot: string;
-  genres: { genre: { title: string } }[];
+  genres: string[];
 }
 
 const MovieSchema: Schema = new Schema({
-  title: { type: String, required: true },
+  name: { type: String, required: true },
   poster: { type: String, required: true },
-  plot: { type: String, required: true },
   year: { type: Number, required: true },
-  genres: [{ genre: { title: String } }],
+  plot: { type: String, required: true },
+  genres: { type: [String], required: true },
 });
 
-// Explicitly specify the collection title
-export default mongoose.models.Movie ||
-  model<IMovie>("Movie", MovieSchema, "movies");
+export default mongoose.models.Movie || mongoose.model<IMovie>('Movie', MovieSchema, 'movies');

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const MDB_URI: string | undefined = process.env.MDB_URI;
+console.log("🚀 - MDB_URI:", MDB_URI)
 
 if (!MDB_URI) {
   throw new Error(
