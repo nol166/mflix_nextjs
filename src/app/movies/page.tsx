@@ -68,15 +68,12 @@ const MoviesPage = () => {
               <Link href={`/movies/${movie._id}`} className="view-link">
                 View
               </Link>
-              <button>
-                <Link
-                  href={`/movies/${movie._id}/update`}
-                  className="update-link"
-                >
-                  Update
-                </Link>
-              </button>
-              <button onClick={() => handleDelete(movie._id)}>Delete</button>
+              <Link
+                href={`/movies/${movie._id}/update`}
+                className="update-link"
+              >
+                Update
+              </Link>
             </div>
           ))}
         </div>
