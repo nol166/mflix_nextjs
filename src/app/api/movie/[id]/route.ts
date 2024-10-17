@@ -6,7 +6,6 @@ import Movie from '../../../../models/Movie';
 export async function GET(req: Request, { params }: { params: { id: string } }) {
     await dbConnect();
 
-    // print database connection status
     console.log('Database connection status:', dbConnect);
 
     const { id } = params;
