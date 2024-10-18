@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
+import Loading from "./loading";
 
 interface Movie {
   _id: string;
@@ -42,12 +43,12 @@ const MoviesPage = () => {
   };
 
   if (loading) {
-    return <div className="loading">Loading...</div>;
+    return <Loading />;
   }
 
   return (
     <div className="movies-container">
-      <h1>Movies</h1>
+      <h1 className="movies-header">Movies</h1>
       <Link href="/movies/create" className="add-movie-button">
         Add Movie
       </Link>
@@ -73,6 +74,15 @@ const MoviesPage = () => {
                 className="update-link"
               >
                 Update
+              </Link>
+              <Link
+                href={`/movies/${movie._id}/delete`}
+                className="delete-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleDelete(movie._id)}}
+              >
+                Delete
               </Link>
             </div>
           ))}

@@ -75,8 +75,19 @@ h2 {
 }
 
 h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
   text-align: center;
   color: #333;
+}
+
+.movies-header {
+  display: flex;
+  font-size: 80px;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto; /* Center the element itself */
 }
 
 .add-movie-button {
@@ -150,6 +161,21 @@ h1 {
   cursor: pointer;
 }
 
+.delete-link {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 0px; 
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #e10000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 .view-link:hover {
   background-color: #005bb5;
 }
@@ -160,6 +186,15 @@ h1 {
   color: #555;
 }
 .movie-details-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.movie-update-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
@@ -223,7 +258,7 @@ h1 {
 }
 
 .form-group input {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
