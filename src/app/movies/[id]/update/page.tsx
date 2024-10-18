@@ -122,6 +122,10 @@ const UpdateMoviePage = () => {
         <button type="submit" className="submit-button">
           Update
         </button>
+        {/* back */}
+        <button onClick={() => router.push("/movies")} className="back-button">
+          Back
+        </button>
       </form>
     </div>
   );
