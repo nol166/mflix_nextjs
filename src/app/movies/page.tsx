@@ -75,7 +75,7 @@ const MoviesPage = () => {
               >
                 Update
               </Link>
-              <Link
+              {/* <Link
                 href={`/movies/${movie._id}/delete`}
                 className="delete-link"
                 onClick={(e) => {
@@ -83,7 +83,7 @@ const MoviesPage = () => {
                   handleDelete(movie._id)}}
               >
                 Delete
-              </Link>
+              </Link> */}
             </div>
           ))}
         </div>
